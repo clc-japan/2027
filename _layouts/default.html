@@ -1,0 +1,224 @@
+<!doctype html>
+<!-- ページのデザイン(見た目)です。文章の修正は index.md で行ってください。 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | escape }}</title>
+<meta name="description" content="{{ page.lead | escape }}">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ page.theme_en | escape }} {{ page.theme_ja | escape }}">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B1B1F; --muted:#55524C; --paper:#FFFFFF; --sand:#F3F1EC; --line:#D6D3CC;
+  --accent:#1E46B4; --accent-dark:#142F7A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Zen Kaku Gothic New','Hiragino Sans',sans-serif;font-size:16px;line-height:1.8}
+a{color:var(--accent)} a:hover{color:var(--accent-dark)}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+h1,h2,h3,p{margin:0}
+h2{font-size:28px;font-weight:900}
+section{padding:40px 0;display:flex;flex-direction:column;gap:24px}
+.hero{background:var(--sand);padding:72px 0 64px}
+.hero .wrap{display:flex;flex-direction:column;gap:24px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{font-size:13px;padding:3px 12px;border-radius:999px;border:1px solid var(--ink)}
+.badge.dark{background:var(--ink);color:#fff;letter-spacing:.08em}
+.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.15;font-weight:900}
+.theme{font-size:clamp(20px,3vw,28px);font-weight:700;line-height:1.5}
+.theme span{color:var(--accent)}
+.lead{max-width:640px;font-size:17px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:12px 28px;border-radius:8px;font-weight:700;text-decoration:none;background:var(--accent);color:#fff}
+.btn:hover{background:var(--accent-dark);color:#fff}
+.btn.light{background:#fff;color:var(--ink)} .btn.light:hover{background:var(--sand);color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.video{position:relative;width:100%;aspect-ratio:16/9;background:var(--ink);border-radius:12px;overflow:hidden}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .soon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#CFCCC5;font-size:15px}
+.note{font-size:14px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.card{background:var(--sand);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.card .mono{color:var(--accent);font-size:14px}
+.card h3{font-size:18px} .card p{font-size:15px}
+dl{margin:0;display:grid;grid-template-columns:minmax(88px,160px) minmax(0,1fr);border-top:1px solid var(--line)}
+dt,dd{margin:0;padding:16px 0;border-bottom:1px solid var(--line)} dt{font-weight:700}
+ol.program{list-style:none;margin:0;padding:0}
+ol.program li{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #E6E3DC}
+ol.program .mono{font-size:14px;padding-top:3px}
+ol.program small{display:block;font-size:15px;color:var(--muted)}
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.track{border:1.5px solid var(--ink);border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:baseline;font-weight:700}
+.track .mono{font-size:20px;color:var(--accent)}
+.apply{margin:24px 0 72px;padding:40px 32px;background:var(--ink);color:#fff;border-radius:16px}
+.apply ol{margin:0;padding-left:1.4em}
+.apply .note{color:#CFCCC5}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.pillar{border-top:3px solid var(--ink);padding-top:16px;display:flex;flex-direction:column;gap:12px}
+.pillar .mono{color:var(--accent);font-size:14px}
+.pillar h3{font-size:20px;line-height:1.5}
+.more{font:inherit;font-weight:700;color:var(--accent);background:none;border:1.5px solid var(--accent);border-radius:8px;min-height:44px;padding:10px 20px;cursor:pointer}
+.more:hover{background:var(--accent);color:#fff}
+dialog{width:min(760px,calc(100% - 32px));max-height:calc(100% - 48px);padding:0;border:0;border-radius:16px;color:var(--ink)}
+dialog::backdrop{background:rgba(27,27,31,.55)}
+.dialog-head{position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line)}
+.dialog-head h2{font-size:20px}
+.close{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:8px;background:var(--sand);color:var(--ink);cursor:pointer}
+.dialog-body{padding:24px;display:flex;flex-direction:column;gap:16px}
+.dialog-body p{text-indent:1em}
+footer{border-top:1px solid var(--line);padding:32px 0 48px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badges">
+      <span class="badge dark mono">{{ page.date_badge | escape }}</span>
+    </div>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="theme">{{ page.theme_en | escape }}<br><span>{{ page.theme_ja | escape }}</span></p>
+    <p class="lead">{{ page.lead | escape }}</p>
+    <div class="row">
+      <a class="btn" href="#apply">参加を申し込む</a>
+      <span>{{ page.venue | escape }}/定員 {{ page.capacity | escape }}</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>{{ page.video_title | escape }}</h2>
+    <div class="video">
+      {% if page.video_youtube_id and page.video_youtube_id != "" %}
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ page.video_youtube_id | uri_escape }}" title="{{ page.video_title | escape }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      {% else %}
+      <div class="soon">趣旨説明動画は準備中です</div>
+      {% endif %}
+    </div>
+    <p class="note">{{ page.video_caption | escape }}</p>
+  </section>
+
+  <section>
+    <h2>このカンファレンスについて</h2>
+    <div class="pillars">
+      {% for a in page.about %}
+      <article class="pillar">
+        <span class="mono">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <h3>{{ a.heading | escape }}</h3>
+        {% for para in a.paragraphs %}<p>{{ para | escape }}</p>{% endfor %}
+      </article>
+      {% endfor %}
+    </div>
+    <div><button type="button" class="more" id="open-full" aria-haspopup="dialog">開催趣旨の全文を読む</button></div>
+  </section>
+
+  <dialog id="full" aria-labelledby="full-title">
+    <div class="dialog-head">
+      <h2 id="full-title">開催趣旨・背景(全文)</h2>
+      <button type="button" class="close" id="close-full" aria-label="閉じる">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body">{{ content }}</div>
+  </dialog>
+
+  <section>
+    <h2>大切にしていること</h2>
+    <div class="cards">
+      {% for v in page.values %}
+      <div class="card">
+        <span class="mono">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <h3>{{ v.title | escape }}</h3>
+        <p>{{ v.text | escape }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>開催概要</h2>
+    <dl>
+      <dt>日時</dt><dd>{{ page.datetime | escape }}</dd>
+      <dt>会場</dt><dd>{{ page.venue | escape }}<br><span class="note">{{ page.access | escape }}</span></dd>
+      <dt>定員</dt><dd>{{ page.capacity | escape }}</dd>
+      <dt>参加費</dt><dd>{{ page.fee | escape }}<br><span class="note">{{ page.fee_note | escape }}</span></dd>
+      <dt>懇親会</dt><dd>{{ page.party | escape }}</dd>
+      <dt>記録</dt><dd>{{ page.record | escape }}</dd>
+      <dt>主催</dt><dd>{{ page.organizer | escape }}</dd>
+    </dl>
+  </section>
+
+  <section>
+    <div class="row" style="align-items:baseline;gap:12px">
+      <h2>プログラム</h2>
+      <span class="note">予定・内容は変更になる場合があります</span>
+    </div>
+    <ol class="program">
+      {% for p in page.program %}
+      <li>
+        <span class="mono">{{ p.time | escape }}</span>
+        <div><strong>{{ p.title | escape }}</strong>{% if p.note and p.note != "" %}<small>{{ p.note | escape }}</small>{% endif %}</div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section>
+    <h2>分科会テーマ</h2>
+    <div class="tracks">
+      {% assign letters = "A,B,C,D,E,F,G,H" | split: "," %}
+      {% for t in page.tracks %}
+      <div class="track"><span class="mono">{{ letters[forloop.index0] }}</span><span>{{ t | escape }}</span></div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="apply" class="apply">
+    <h2>参加のお申し込み</h2>
+    <ol>
+      <li>Peatixのイベントページからお申し込みください。参加費のお支払いもPeatix上で行えます。</li>
+      <li>先着順で受け付け、定員(40名)に達し次第締め切ります。</li>
+      <li>開催前に、詳細のご案内をお送りします。</li>
+    </ol>
+    <div class="row">
+      {% if page.apply_url and page.apply_url != "" %}
+      <a class="btn light" href="{{ page.apply_url | escape }}" target="_blank" rel="noopener">Peatixで申し込む</a>
+      {% else %}
+      <span class="btn light" aria-disabled="true">受付開始までお待ちください</span>
+      {% endif %}
+      <span class="note">キャンセルについて:{{ page.cancel | escape }}</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>{{ page.organizer | escape }}</span>
+    <span>お問い合わせ:{{ page.contact | escape }}</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var dlg = document.getElementById('full');
+  var openBtn = document.getElementById('open-full');
+  var closeBtn = document.getElementById('close-full');
+  if (!dlg || !openBtn) return;
+  openBtn.addEventListener('click', function () {
+    if (typeof dlg.showModal === 'function') { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+  });
+  closeBtn.addEventListener('click', function () { dlg.close ? dlg.close() : dlg.removeAttribute('open'); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();
+</script>
+</body>
+</html>

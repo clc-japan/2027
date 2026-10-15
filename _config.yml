@@ -1,0 +1,8 @@
+# サイト全体の設定(通常は編集不要です)
+title: Creative Learning Conference Japan 2027
+lang: ja
+markdown: kramdown
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - .github
