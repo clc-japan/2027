@@ -103,7 +103,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="soon">趣旨説明動画は準備中です</div>
       {% endif %}
     </div>
-    <p class="note">{{ page.video_caption | escape }}</p>
+    {% if page.video_caption and page.video_caption != "" %}<p class="note">{{ page.video_caption | escape }}</p>{% endif %}
   </section>
 
   <section>
