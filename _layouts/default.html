@@ -73,6 +73,7 @@ dialog::backdrop{background:rgba(27,27,31,.55)}
 .dialog-body p{text-indent:1em}
 footer{border-top:1px solid var(--line);padding:32px 0 48px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}
 </style>
 </head>
 <body>
@@ -203,7 +204,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 <footer>
   <div class="wrap">
     <span>{{ page.organizer | escape }}</span>
-    <span>お問い合わせ:{{ page.contact | escape }}</span>
+    <span class="footer-links">
+      <span>お問い合わせ:{{ page.contact | escape }}</span>
+      <a href="{{ '/privacy.html' | relative_url }}">プライバシーポリシー</a>
+    </span>
   </div>
 </footer>
 
