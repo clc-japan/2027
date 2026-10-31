@@ -69,7 +69,7 @@ program:
     note: ""
   - time: "10:50"
     title: "基調講演"
-    note: "日本におけるCreative Learningのこれまでとこれから/森秀樹先生"
+    note: "日本におけるCreative Learningのこれまでとこれから/森 秀樹(昭和女子大学 人間社会学部 准教授)"
   - time: "12:00"
     title: "ランチ & ライトニングトーク"
     note: "各地の実践者による短い話題提供"
