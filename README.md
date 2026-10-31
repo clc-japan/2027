@@ -9,5 +9,7 @@ Creative Learning Conference Japan 2027 の告知ページです。GitHub Pages 
 | --- | --- |
 | `index.md` | ページの中身(日時・会場・趣旨の要約と全文・プログラム・PeatixのURL・動画など) |
 | `_layouts/default.html` | ページのデザイン |
+| `privacy.md` | プライバシーポリシーの本文(告知ページ下部のリンクから表示) |
+| `_layouts/page.html` | プライバシーポリシーなど文章だけのページのデザイン |
 | `_config.yml` | サイト全体の設定(通常は触りません) |
 | `CONTRIBUTING.md` | 編集手順書 |
