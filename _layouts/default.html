@@ -148,7 +148,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <h2>開催概要</h2>
     <dl>
       <dt>日時</dt><dd>{{ page.datetime | escape }}</dd>
-      <dt>会場</dt><dd>{{ page.venue | escape }}<br><span class="note">{{ page.access | escape }}</span></dd>
+      <dt>会場</dt><dd>{{ page.venue | escape }}<br><span class="note">{{ page.access | escape }}{% if page.map_url and page.map_url != "" %} <a href="{{ page.map_url | escape }}" target="_blank" rel="noopener">地図を開く(Googleマップ)</a>{% endif %}</span></dd>
       <dt>定員</dt><dd>{{ page.capacity | escape }}</dd>
       <dt>参加費</dt><dd>{{ page.fee | escape }}<br><span class="note">{{ page.fee_note | escape }}</span></dd>
       <dt>懇親会</dt><dd>{{ page.party | escape }}</dd>
@@ -205,8 +205,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <div class="wrap">
     <span>{{ page.organizer | escape }}</span>
     <span class="footer-links">
-      <span>お問い合わせ:{{ page.contact | escape }}</span>
-      <a href="{{ '/privacy.html' | relative_url }}">プライバシーポリシー</a>
+      {% if page.contact_url and page.contact_url != "" %}<a href="{{ page.contact_url | escape }}" target="_blank" rel="noopener">お問い合わせフォーム</a>{% endif %}
+      <a href="{{ '/privacy.html' | relative_url }}" target="_blank" rel="noopener">プライバシーポリシー</a>
     </span>
   </div>
 </footer>
