@@ -44,7 +44,7 @@ map_url: "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%
 capacity: "40名(先着順・定員に達し次第締め切ります)"
 fee: "一般 10,000円/学生 5,000円/応援参加 15,000円"
 fee_note: "参加費には昼食・飲み物が含まれます。応援参加は、一般参加費との差額(5,000円)を、次回以降のCreative Learning Conference Japanの活動費に充てる区分です。"
-party: "開催を予定しています。詳細は別途ご連絡し、参加費は別途集金します。"
+party: "カンファレンス終了後に開催を予定しています。詳細は別途ご連絡し、参加費は別途集金します。"
 record: "オンライン配信はありません。当日の様子は写真・映像で記録します。"
 organizer: "Creative Learning Conference Japan 実行委員会"
 
