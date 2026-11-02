@@ -39,7 +39,7 @@ section{padding:40px 0;display:flex;flex-direction:column;gap:24px}
 .btn.light{background:#fff;color:var(--ink)} .btn.light:hover{background:var(--sand);color:var(--ink)}
 .row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 .video{position:relative;width:100%;aspect-ratio:16/9;background:var(--ink);border-radius:12px;overflow:hidden}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--ink)}
 .video .soon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#CFCCC5;font-size:15px}
 .note{font-size:14px;color:var(--muted)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
@@ -100,8 +100,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <div class="video">
       {% if page.video_youtube_id and page.video_youtube_id != "" %}
       <iframe src="https://www.youtube-nocookie.com/embed/{{ page.video_youtube_id | uri_escape }}" title="{{ page.video_title | escape }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      {% elsif page.video_file and page.video_file != "" %}
+      <video controls playsinline preload="none"{% if page.video_poster and page.video_poster != "" %} poster="{{ page.video_poster | relative_url }}"{% endif %} aria-label="{{ page.video_title | escape }}">
+        <source src="{{ page.video_file | relative_url }}" type="video/mp4">
+      </video>
       {% else %}
-      <div class="soon">趣旨説明動画は準備中です</div>
+      <div class="soon">動画は準備中です</div>
       {% endif %}
     </div>
     {% if page.video_caption and page.video_caption != "" %}<p class="note">{{ page.video_caption | escape }}</p>{% endif %}

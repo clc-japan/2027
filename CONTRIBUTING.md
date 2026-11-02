@@ -73,6 +73,13 @@ YouTube に「限定公開」でアップロードします。共有URLが `http
 video_youtube_id: "AbCdEf12345"
 ```
 
+YouTubeを使わない場合は、動画ファイル(mp4、数MB程度)を `assets/video/` に置き、`video_file:` にそのパスを書きます。`video_youtube_id:` に値が入っているときは、YouTubeのほうが優先されます。
+
+```yaml
+video_file: "/assets/video/chair-message.mp4"
+video_poster: "/assets/video/chair-message-poster.jpg"
+```
+
 ### プログラムの行を追加・変更する
 
 `program:` の中は、3行で1つのまとまりです。前後のまとまりと **字下げをそろえて** コピーしてください。
