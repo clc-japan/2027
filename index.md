@@ -25,7 +25,7 @@ video_youtube_id: ""
 video_file: "/assets/video/chair-message.mp4"
 video_poster: "/assets/video/chair-message-poster.jpg"
 video_title: "実行委員長からのメッセージ"
-video_caption: "実行委員長の村井裕実子より、このカンファレンスにこめた思いをお届けします(約1分45秒・音声あり)。"
+video_caption: ""
 
 # --- このカンファレンスについて(要約・2つの柱) ---
 about:
