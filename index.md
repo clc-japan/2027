@@ -17,12 +17,15 @@ theme_en: "Why Creative Learning?"
 theme_ja: "どうして創造的な学びか?"
 lead: "学校・地域・大学・NPO・企業で「つくることを通した学び」に取り組む人が集まり、1日かけて語り合い、手を動かすカンファレンスです。"
 
-# --- 趣旨説明動画(YouTube) ---
+# --- 動画 ---
 # YouTubeのURL「https://youtu.be/XXXXXXXXXXX」の XXXXXXXXXXX 部分を入れます。
-# 空欄 "" のあいだは「準備中」と表示されます。
+# YouTubeが空欄 "" のときは、video_file の動画ファイルを再生します。
+# どちらも空欄のあいだは「準備中」と表示されます。
 video_youtube_id: ""
-video_title: "3分でわかる CLCJ 2027"
-video_caption: ""
+video_file: "/assets/video/chair-message.mp4"
+video_poster: "/assets/video/chair-message-poster.jpg"
+video_title: "実行委員長からのメッセージ"
+video_caption: "実行委員長の村井裕実子より、このカンファレンスにこめた思いをお届けします(約1分45秒・音声あり)。"
 
 # --- このカンファレンスについて(要約・2つの柱) ---
 about:
