@@ -41,7 +41,7 @@ about:
 # --- 開催概要 ---
 datetime: "2027年1月23日(土)10:00–17:00(受付 9:30〜)"
 venue: "羽田イノベーションシティ 慶應義塾大学 羽田キャンパス"
-access: "東京都大田区羽田空港1-1-4"
+access: "東京都大田区羽田空港1-1-4 K棟 K504"
 # 地図のリンク先(Googleマップ)。空欄 "" にするとリンクは表示されません。
 map_url: "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF1-1-4"
 capacity: "50名(先着順・定員に達し次第締め切ります)"
